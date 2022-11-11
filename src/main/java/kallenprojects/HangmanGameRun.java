@@ -1,5 +1,6 @@
+package main.java.kallenprojects;
 
-import java.io.OutputStream;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,7 +28,7 @@ public class HangmanGameRun {
 
         //initial game setup and output greeting
         int numberOfLives = 6;
-        System.out.println("Want to play Hangman? You get " + numberOfLives + " tries to guess the word I'm thinking of!");
+        System.out.println("Want to play main.java.Hangman? You get " + numberOfLives + " tries to guess the word I'm thinking of!");
         System.out.println();
         System.out.println("I'm thinking of a word...");
         System.out.println();
@@ -105,7 +106,7 @@ public class HangmanGameRun {
         //upon winning or losing, display the proper message to the user
         System.out.println("-----------------------------------");
         if (numberOfLives == 0) {
-            System.out.println("You lose! I win!");
+            System.out.println("You lose! I win! The word was \"" + selection + "\"!");
         } else {
             System.out.println("You win!");
         }
@@ -115,7 +116,7 @@ public class HangmanGameRun {
 
     private List<String> createDictionary() {
         List<String> dictionary = new ArrayList<>();
-        dictionary.add("Tiger");
+        dictionary.add("tiger");
         dictionary.add("meadow");
         dictionary.add("alpaca");
         dictionary.add("butterfly");

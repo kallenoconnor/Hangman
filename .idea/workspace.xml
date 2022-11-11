@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac7d8bf3-2a1b-4e16-a61a-2d54fc7cef98" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HangmanGameRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HangmanGameRun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HangmanGameRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HangmanGameRun.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +38,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/koconnor/Coding Projects/Hangman Game&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -43,7 +46,7 @@
 }</component>
   <component name="RunManager">
     <configuration name="HangmanGameRun" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HangmanGameRun" />
+      <option name="MAIN_CLASS_NAME" value="main.java.kallenprojects.HangmanGameRun" />
       <module name="Hangman Game" />
       <method v="2">
         <option name="Make" enabled="true" />
