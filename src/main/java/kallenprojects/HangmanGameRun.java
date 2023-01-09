@@ -1,6 +1,8 @@
 package main.java.kallenprojects;
 
 
+import Services.WordGeneratorAPI;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,12 +18,9 @@ public class HangmanGameRun {
 
     private void run() {
 
-        //create dictionary of words from which to choose
-        List<String> dictionary = createDictionary();
-
-        //randomly select a word
-        int randomSelection = (int) (Math.random() * (dictionary.size() - 1));
-        String selection = dictionary.get(randomSelection);
+        //randomly select a word using the API
+        WordGeneratorAPI generator = new WordGeneratorAPI();
+        String selection = generator.getRandomWord().substring(2,generator.getRandomWord().length()-2);
 
         //setup scanner to accept user input
         Scanner input = new Scanner(System.in);
@@ -42,6 +41,9 @@ public class HangmanGameRun {
         }
         String output = String.join("",lettersOfGuess);
 
+        //create list to hold guessed letters
+        List<Character> lettersGuessed = new ArrayList<>();
+
         //begin loop to run until the user loses or wins
         while (numberOfLives > 0) {
             System.out.println("(Enter a letter to guess):");
@@ -60,6 +62,9 @@ public class HangmanGameRun {
             }
             //convert user string to char
             char guess = userInput.charAt(0);
+
+            //place guessed letter in a list
+            lettersGuessed.add(guess);
 
             //count the number of times the guessed letter appears in the string
             int numberOfTimesLetterAppears = 0;
@@ -100,13 +105,16 @@ public class HangmanGameRun {
             System.out.println("-----------------------------------");
             System.out.println();
 
+            System.out.println("You have guess the following letters:" + lettersGuessed);
+
+
 
         }
 
         //upon winning or losing, display the proper message to the user
         System.out.println("-----------------------------------");
         if (numberOfLives == 0) {
-            System.out.println("You lose! I win! The word was \"" + selection + "\"!");
+            System.out.println("You lose! I win! The word was \"" + selection + "\"j!");
         } else {
             System.out.println("You win!");
         }
@@ -114,16 +122,7 @@ public class HangmanGameRun {
 
 
 
-    private List<String> createDictionary() {
-        List<String> dictionary = new ArrayList<>();
-        dictionary.add("tiger");
-        dictionary.add("meadow");
-        dictionary.add("alpaca");
-        dictionary.add("butterfly");
-        dictionary.add("teaching");
-        dictionary.add("moose");
-        return dictionary;
-    }
+
 
     private void validateUserInput(String input) throws IllegalArgumentException {
         if (input.length() > 1 || input.equals("")) {
