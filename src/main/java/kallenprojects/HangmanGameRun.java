@@ -2,6 +2,8 @@ package main.java.kallenprojects;
 
 
 import Services.WordGeneratorAPI;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.fasterxml.jackson.databind.util.JSONWrappedObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +29,7 @@ public class HangmanGameRun {
 
         //initial game setup and output greeting
         int numberOfLives = 6;
-        System.out.println("Want to play main.java.Hangman? You get " + numberOfLives + " tries to guess the word I'm thinking of!");
+        System.out.println("Want to play Hangman? You get " + numberOfLives + " tries to guess the word I'm thinking of!");
         System.out.println();
         System.out.println("I'm thinking of a word...");
         System.out.println();
@@ -114,7 +116,7 @@ public class HangmanGameRun {
         //upon winning or losing, display the proper message to the user
         System.out.println("-----------------------------------");
         if (numberOfLives == 0) {
-            System.out.println("You lose! I win! The word was \"" + selection + "\"j!");
+            System.out.println("You lose! I win! The word was \"" + selection + "\"!");
         } else {
             System.out.println("You win!");
         }
@@ -128,14 +130,14 @@ public class HangmanGameRun {
         if (input.length() > 1 || input.equals("")) {
             throw new IllegalArgumentException("***Input must be one character in length***");
         }
-        if (isDigits(input)) {
-            throw new IllegalArgumentException("***Input must not be numeric***");
+        if (!isLetter(input)) {
+            throw new IllegalArgumentException("***Input must not be number or symbol***");
         }
     }
 
-    private boolean isDigits(String str) {
+    private boolean isLetter(String str) {
         for (char ch: str.toCharArray()) {
-            if ((ch < '0') || (ch > '9')) {
+            if (Character.isDigit(ch) || !Character.isLetter(ch)) {
                 return false;
             }
         }
